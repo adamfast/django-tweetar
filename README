@@ -1,0 +1,11 @@
+This project has a very simple purpose - make it trivially easy to setup instances of python-tweetar. The move to OAuth by twitter made the setup process involve several shell scripts, cutting and pasting, etc.
+
+It uses Django for a web interface and ORM, and django-socialregistration to configure the Twitter connections.
+
+This app and what it outputs are not intended to be used by its users or their end users for flight planning purposes. Remember your training and get your weather briefing from a certified source. If you don't know where to get weather, you can find a flight instructor at http://www.aopa.org/learntofly/findcfi/ and they will be happy to teach you about aviation weather and other aspects of aviation.
+
+Dependencies on your PythonPath:
+  python-twitter    http://code.google.com/p/python-twitter/
+    Note: python-twitter requires python-oauth2, follow its setup instructions
+  django-socialregistration
+  Django (tested with post-1.2 trunk, but should work on older)

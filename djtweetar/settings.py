@@ -20,6 +20,12 @@ DATABASES = {
     }
 }
 
+TWITTER_CONSUMER_KEY = ''
+TWITTER_CONSUMER_SECRET_KEY = ''
+TWITTER_REQUEST_TOKEN_URL = ''
+TWITTER_ACCESS_TOKEN_URL = ''
+TWITTER_AUTHORIZATION_URL = ''
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -92,4 +98,5 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'djtweetar.stations',
+    'socialregistration',
 )

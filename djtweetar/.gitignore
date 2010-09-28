@@ -1,0 +1,3 @@
+*.pyc
+djtweetar.db
+local_settings.py

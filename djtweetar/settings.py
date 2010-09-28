@@ -100,3 +100,5 @@ INSTALLED_APPS = (
     'djtweetar.stations',
     'socialregistration',
 )
+
+from local_settings import *

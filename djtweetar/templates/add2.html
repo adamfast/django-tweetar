@@ -1,0 +1,11 @@
+{% if tp %}
+This weather station is already tweeting! You can find it here: <a href='http://www.twitter.com/{{ tp.screenname }}'>@{{ tp.screenname }}</a>.
+{% else %}
+This weather station isn't tweeting yet, but you can set it up! Go to Twitter, create an account for it, and when you're done come back here and click this button. Authorize the app, and we'll take it from there.<br>
+<br>
+{% load twitter_tags %}
+{% twitter_button %}
+<br>
+<br>
+Awesome, isn't it? May we ask for a donation to help with infrastructure costs to keep it running?
+{% endif %}

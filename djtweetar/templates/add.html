@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <form action='{% url submit_form %}' method='post'>
 <table border='0' cellspacing='0' cellpadding='0'>
 {{ form.as_table }}
@@ -16,3 +20,5 @@ I found several matches - please choose the one you're looking for:
 {% endfor %}
 </ul>
 {% endif %}
+
+{% endblock content %}

@@ -1,13 +1,16 @@
-This app will allow you to connect a Twitter account to a METAR reporting station.
+{% extends "base.html" %}
 
-Which station would you like to begin tweeting? ICAO (beginning with K) codes, please.
+{% block content %}
+<h1>METARs on Twitter</h1>
+
+<p><strong>This app will allow you to connect a Twitter account to a METAR reporting station.</strong></p>
+
+<p>Which station would you like to begin tweeting? ICAO (beginning with K) codes, please.</p>
 
 <form action='{% url submit_form %}' method='post'>
-<table border='0' cellspacing='0' cellpadding='0'>
-{{ form.as_table }}
+{{ form.as_p }}
 {% csrf_token %}
-  <tr>
-    <td colspan='2' align='center'><input type='submit' value='Add'></td>
-  </tr>
-</table>
+<input type='submit' value='Add'>
 </form>
+
+{% endblock content %}

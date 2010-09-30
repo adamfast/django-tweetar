@@ -5,6 +5,41 @@
 <h2>{{ ws.name }}, {{ ws.state }} {{ ws.country }}</h2>
 {% if tp %}
 This weather station is already tweeting! You can find it here: <a href='http://www.twitter.com/{{ tp.screenname }}'>@{{ tp.screenname }}</a>.
+
+<p>
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 5,
+  interval: 5000,
+  width: 565,
+  height: 200,
+  theme: {
+    shell: {
+      background: '#333333',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#000000',
+      color: '#ffffff',
+      links: '#4aed05'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('{{ tp.screenname }}').start();
+</script>
+</p>
+
 {% else %}
 This weather station isn't tweeting yet, but you can set it up! Go to Twitter, create an account for it (so far our standard would call for {{ ws.code }}_WX, but if {{ ws.code }} is available you may prefer that), and when you're done come back here and click this button. Authorize the app, and we'll take it from there. The update runs three times per hour and will check to make sure the latest conditions are online, pushing new when necessary. You should see the account you connect tweeting the METARs within 20-30 minutes. If not, ping me on Twitter - @adamcanfly.<br>
 <br>

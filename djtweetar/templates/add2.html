@@ -6,7 +6,7 @@
 {% if tp %}
 This weather station is already tweeting! You can find it here: <a href='http://www.twitter.com/{{ tp.screenname }}'>@{{ tp.screenname }}</a>.
 {% else %}
-This weather station isn't tweeting yet, but you can set it up! Go to Twitter, create an account for it, and when you're done come back here and click this button. Authorize the app, and we'll take it from there.<br>
+This weather station isn't tweeting yet, but you can set it up! Go to Twitter, create an account for it (so far our standard would call for {{ ws.code }}_WX, but if {{ ws.code }} is available you may prefer that), and when you're done come back here and click this button. Authorize the app, and we'll take it from there. The update runs three times per hour and will check to make sure the latest conditions are online, pushing new when necessary. You should see the account you connect tweeting the METARs within 20-30 minutes. If not, ping me on Twitter - @adamcanfly.<br>
 <br>
 {% load twitter_tags %}
 {% twitter_button %}

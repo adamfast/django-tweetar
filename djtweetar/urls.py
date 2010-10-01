@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     url(r'^add2/$', 'djtweetar.stations.views.add2', name='step2'),
     (r'^connect-site/(?P<station>[a-zA-Z0-9*.]+)/$', 'djtweetar.stations.views.connect'),
 
+    url(r'^stations/(?P<station>[a-zA-Z0-9*.]+)/$', 'djtweetar.stations.views.add2', name='station'),
+
     (r'^socialregistration/', include('socialregistration.urls')),
 
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),

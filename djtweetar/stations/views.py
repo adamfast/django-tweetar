@@ -23,23 +23,23 @@ def add(request):
         if form.is_valid():
             ws = WeatherStation.objects.filter(code__icontains=form.cleaned_data['code'])
             if ws.count() == 1:
-                return HttpResponseRedirect('%s?code=%s' % (reverse('step2'), ws[0].code))
+                return HttpResponseRedirect(reverse('station', args=[ws[0].code]))
     else:
         form = StationRegistrationForm()
 
     return render_to_response('add.html', {'form': form, 'ws': ws}, context_instance=RequestContext(request))
 
-def add2(request):
-    if not request.GET.get('code'):
+def add2(request, station=None):
+    if not station:
         return HttpResponseRedirect(reverse('submit_form'))
     else:
-        ws = WeatherStation.objects.get(code=request.GET.get('code'))
+        ws = WeatherStation.objects.get(code=station)
         try:
             tp = TwitterProfile.objects.get(content_type=ContentType.objects.get_for_model(WeatherStation), object_id=ws.id)
         except TwitterProfile.DoesNotExist:
             tp = None
 
-    request.session['next'] = '%s?code=%s' % (reverse('step2'), ws.code)
+    request.session['next'] = reverse('station', args=[ws.code])
 
     return render_to_response('add2.html', {'ws': ws, 'tp': tp, 'socialregistration_connect_object': ws}, context_instance=RequestContext(request))
 

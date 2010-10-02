@@ -110,6 +110,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'socialregistration',
     'weathertracking',
+    'djtweetar.runlogs',
 )
 
 try:

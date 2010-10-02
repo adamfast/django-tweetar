@@ -110,6 +110,10 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'socialregistration',
     'weathertracking',
+    'djtweetar.runlogs',
 )
 
-from local_settings import *
+try:
+    from local_settings import *
+except ImportError:
+    pass

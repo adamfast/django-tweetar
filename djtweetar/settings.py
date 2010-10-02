@@ -112,4 +112,7 @@ INSTALLED_APPS = (
     'weathertracking',
 )
 
-from local_settings import *
+try:
+    from local_settings import *
+except ImportError:
+    pass

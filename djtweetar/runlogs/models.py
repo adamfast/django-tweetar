@@ -1,5 +1,6 @@
 from django.db import models
 from socialregistration.models import TwitterProfile
+from weathertracking.models import Station
 
 class TweetarRun(models.Model):
     begin = models.DateTimeField()

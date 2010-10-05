@@ -9,3 +9,4 @@ class TweetarExceptionAdmin(admin.ModelAdmin):
     list_filter = ('addressed', 'metar_posted')
 
 admin.site.register(TweetarRun, TweetarRunAdmin)
+admin.site.register(TweetarException, TweetarExceptionAdmin)

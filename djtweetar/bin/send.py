@@ -11,7 +11,7 @@ def send_reports():
     profiles = TwitterProfile.objects.filter(content_type=ContentType.objects.get_for_model(WeatherStation))
 
     exception_count = 0
-    run = TweetarRun(begin=datetime.datetime.now())
+    run = TweetarRun.objects.create(begin=datetime.datetime.now(), end=datetime.datetime.now(), elapsed_stations=0, total_stations=0, stations_updated=0, station_exceptions=0)
 
     for profile in profiles:
         exception_occurred = False

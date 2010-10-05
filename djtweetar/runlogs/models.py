@@ -1,4 +1,5 @@
 from django.db import models
+from socialregistration.models import TwitterProfile
 
 class TweetarRun(models.Model):
     begin = models.DateTimeField()
@@ -14,3 +15,13 @@ class TweetarRun(models.Model):
     def save(self, *args, **kwargs):
         self.elapsed_seconds = (self.end - self.begin).seconds
         super(TweetarRun, self).save(*args, **kwargs)
+
+class TweetarException(models.Model):
+    run = models.ForeignKey(TweetarRun)
+    station = models.ForeignKey(Station)
+    profile = models.ForeignKey(TwitterProfile)
+    exception = models.TextField(blank=True)
+    metar_from_noaa = models.CharField(max_length=256, blank=True)
+    last_twitter_post = models.CharField(max_length=256, blank=True)
+    metar_posted = models.BooleanField(default=False)
+    addressed = models.BooleanField(default=False)

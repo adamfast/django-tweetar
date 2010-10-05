@@ -16,7 +16,7 @@
 I found several matches - please choose the one you're looking for:
 <ul>
 {% for station in ws %}
-  <li><a href='{% url step2 %}?code={{ station.code }}'>{{ station.code }}</a>&nbsp;&nbsp;&nbsp;{{ station.name }}, {{ station.state }} {{ station.country }}</li>
+  <li><a href='{% url station station.code %}'>{{ station.code }}</a>&nbsp;&nbsp;&nbsp;{{ station.name }}, {{ station.state }} {{ station.country }}</li>
 {% endfor %}
 </ul>
 {% endif %}

@@ -23,7 +23,7 @@ def send_reports():
         }
         try:
             retrieve_and_post(conf)
-        except urllib2.HTTPError:
+        except: #  urllib2.HTTPError taking away the exception type so it will always continue
             exception_count = exception_count + 1
 
     run.total_stations = len(profiles)

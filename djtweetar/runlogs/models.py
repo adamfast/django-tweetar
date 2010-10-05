@@ -1,6 +1,6 @@
 from django.db import models
 from socialregistration.models import TwitterProfile
-from weathertracking.models import Station
+from weathertracking.models import WeatherStation
 
 class TweetarRun(models.Model):
     begin = models.DateTimeField()
@@ -19,7 +19,7 @@ class TweetarRun(models.Model):
 
 class TweetarException(models.Model):
     run = models.ForeignKey(TweetarRun)
-    station = models.ForeignKey(Station)
+    station = models.ForeignKey(WeatherStation)
     profile = models.ForeignKey(TwitterProfile)
     exception = models.TextField(blank=True)
     metar_from_noaa = models.CharField(max_length=256, blank=True)

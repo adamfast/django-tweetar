@@ -1,0 +1,17 @@
+# database adapter
+psycopg2==2.4.1
+
+# django
+django==1.3
+
+# socialregistration
+oauth2==1.5.170 # from github/simplegeo
+python-twitter==0.8.2 # from http://code.google.com/p/python-twitter/
+git+git://github.com/pythonforfacebook/facebook-sdk.git#egg=facebook
+git+git://github.com/adamfast/django-socialregistration.git#egg=socialregistration
+
+# python-tweetar
+git+git://github.com/adamfast/python-tweetar.git#egg=python-tweetar
+
+# weathertracking
+git+git://github.com/adamfast/django-weathertracking.git#egg=weathertracking

@@ -1,4 +1,4 @@
-from distutils.core import setup
+from distutils.core import setup, find_packages
 
 setup(
     name = "django-tweetar",
@@ -7,7 +7,7 @@ setup(
     author_email = "adamfast@gmail.com",
     version = "0.1",
     license = "BSD",
-    packages = ["djtweetar", "djtweetar.runlogs"],
+    packages = find_packages(),
     install_requires = ['python-tweetar'],
     description = "App for posting current conditions to twitter via python-tweetar.",
     classifiers = [
